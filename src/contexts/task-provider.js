@@ -33,6 +33,15 @@ const TaskProvider = ({ children }) => {
     handleTasksChange(data);
   };
 
+  const toggleTaskStatus = (task) => {
+    const data = tasks.map((savedTask) =>
+      savedTask.id === task.id
+        ? { ...task, completed: !task.completed }
+        : savedTask
+    );
+    handleTasksChange(data);
+  };
+
   React.useEffect(() => {
     const savedTasks = localStorage.getItem(TASKS_KEY);
     const data = JSON.parse(savedTasks);
@@ -40,7 +49,9 @@ const TaskProvider = ({ children }) => {
   }, []);
 
   return (
-    <TaskContext.Provider value={{ tasks, addNewTask, removeTask, editTask }}>
+    <TaskContext.Provider
+      value={{ tasks, addNewTask, removeTask, editTask, toggleTaskStatus }}
+    >
       {children}
     </TaskContext.Provider>
   );

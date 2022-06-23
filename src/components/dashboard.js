@@ -8,7 +8,8 @@ const Dashboard = ({}) => {
   const [editingTask, setEditingTask] = React.useState({});
   const [inputValue, setInputValue] = React.useState("");
 
-  const { tasks, addNewTask, editTask, removeTask } = useTasks();
+  const { tasks, addNewTask, editTask, removeTask, toggleTaskStatus } =
+    useTasks();
 
   React.useEffect(() => {
     setInputValue(editingTask.name);
@@ -62,9 +63,25 @@ const Dashboard = ({}) => {
               return (
                 <React.Fragment key={id}>
                   <li style={{ display: "flex" }}>
-                    <input type="checkbox" id={id} />
+                    <input
+                      type="checkbox"
+                      id={id}
+                      checked={task.completed}
+                      onChange={() => {
+                        toggleTaskStatus(task);
+                      }}
+                    />
                     <Separator direction="horizontal" />
-                    <label htmlFor={id} style={{ flexGrow: 1 }}>
+                    <label
+                      htmlFor={id}
+                      style={{
+                        flexGrow: 1,
+                        color: task.completed ? "gray" : "black",
+                        textDecoration: task.completed
+                          ? "line-through"
+                          : undefined,
+                      }}
+                    >
                       {task.name}
                     </label>
                     <Separator direction="horizontal" />
