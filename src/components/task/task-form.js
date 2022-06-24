@@ -4,9 +4,9 @@ import Row from "../row";
 import Button from "../button";
 import Input from "../input";
 import { useTasks } from "../../contexts/task-provider";
-import PlusIcon from "../plus-icon";
+import Icon from "../icon";
 
-const TaskForm = ({}) => {
+const TaskForm = ({ }) => {
   const [task, setTask] = React.useState("");
   const { addNewTask } = useTasks();
 
@@ -27,7 +27,7 @@ const TaskForm = ({}) => {
             onChange={setTask}
           />
           <Button>
-            <PlusIcon width={24} height={24} color="#fff" />
+            <Icon width={24} height={24} color="#fff" name="plusIcon" />
           </Button>
         </Row>
       </Row>
