@@ -4,9 +4,10 @@ import Row from "../row";
 import Button from "../button";
 import Input from "../input";
 import { useTasks } from "../../contexts/task-provider";
-import PlusIcon from "../plus-icon";
+import PlusIcon from "../icons/plus-icon";
+;
 
-const TaskForm = ({}) => {
+const TaskForm = () => {
   const [task, setTask] = React.useState("");
   const { addNewTask } = useTasks();
 

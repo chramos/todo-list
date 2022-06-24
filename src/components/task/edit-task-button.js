@@ -1,7 +1,8 @@
 import React from "react";
 import { useTasks } from "../../contexts/task-provider";
 import Button from "../button";
-import PencilIcon from "../pencil-icon";
+import PencilIcon from "../icons/pencil-icon";
+
 
 const EditTaskButton = ({ task }) => {
   const { editTask } = useTasks();

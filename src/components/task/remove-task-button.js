@@ -1,7 +1,7 @@
 import React from "react";
 import { useTasks } from "../../contexts/task-provider";
 import Button from "../button";
-import TrashIcon from "../trash-icon";
+import TrashIcon from "../icons/trash-icon";
 
 const RemoveTaskButton = ({ task }) => {
   const { removeTask } = useTasks();
