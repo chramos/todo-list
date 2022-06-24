@@ -1,7 +1,7 @@
 import React from "react";
 import { useTasks } from "../../contexts/task-provider";
 import Button from "../button";
-import TrashIcon from "../icons/trash-icon";
+import Icon from "../icon";
 
 const RemoveTaskButton = ({ task }) => {
   const { removeTask } = useTasks();
@@ -18,7 +18,7 @@ const RemoveTaskButton = ({ task }) => {
         }
       }}
     >
-      <TrashIcon width={16} height={16} color="#fff" />
+      <Icon name="trash" width={16} height={16} color="#fff" />
     </Button>
   );
 };
