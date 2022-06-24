@@ -18,15 +18,15 @@ const TaskProvider = ({ children }) => {
     handleTasksChange(data);
   };
 
-  const removeTask = (task) => {
-    const data = tasks.filter((savedTask) => savedTask.id !== task.id);
+  const removeTask = (taskId) => {
+    const data = tasks.filter((savedTask) => savedTask.id !== taskId);
     handleTasksChange(data);
   };
 
-  const editTask = (task) => {
+  const editTask = (taskId, taskName) => {
     const data = tasks.map((savedTask) => {
-      if (savedTask.id === task.id) {
-        return { ...savedTask, name: task.name };
+      if (savedTask.id === taskId) {
+        return { ...savedTask, name: taskName };
       }
       return savedTask;
     });
