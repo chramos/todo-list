@@ -1,7 +1,8 @@
 import React from "react";
 import { useTasks } from "../../contexts/task-provider";
+import { trash } from "../../utils/icon-path-directory";
 import Button from "../button";
-import TrashIcon from "../trash-icon";
+import Icon from "../icon";
 
 const RemoveTaskButton = ({ task }) => {
   const { removeTask } = useTasks();
@@ -18,7 +19,7 @@ const RemoveTaskButton = ({ task }) => {
         }
       }}
     >
-      <TrashIcon width={16} height={16} color="#fff" />
+      <Icon iconPath={trash} width={16} height={16} color="#fff" />
     </Button>
   );
 };
