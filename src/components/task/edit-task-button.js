@@ -1,7 +1,6 @@
-import React from "react";
 import { useTasks } from "../../contexts/task-provider";
 import Button from "../button";
-import PencilIcon from "../pencil-icon";
+import Icon from "../icons";
 
 const EditTaskButton = ({ task }) => {
   const { editTask } = useTasks();
@@ -14,7 +13,7 @@ const EditTaskButton = ({ task }) => {
         editTask(task.id, newName);
       }}
     >
-      <PencilIcon width={16} height={16} color="#fff" />
+      <Icon icon="pencil" width={16} height={16} color="#fff" />
     </Button>
   );
 };
