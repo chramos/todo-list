@@ -33,10 +33,10 @@ const TaskProvider = ({ children }) => {
     handleTasksChange(data);
   };
 
-  const toggleTaskStatus = (task) => {
+  const toggleTaskStatus = (taskId) => {
     const data = tasks.map((savedTask) =>
-      savedTask.id === task.id
-        ? { ...task, completed: !task.completed }
+      savedTask.id === taskId
+        ? { ...savedTask, completed: !savedTask.completed }
         : savedTask
     );
     handleTasksChange(data);
